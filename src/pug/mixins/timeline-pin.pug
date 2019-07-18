@@ -1,0 +1,10 @@
+mixin timeline-pin(options)
+	- var id = `timeline-${options.pageId}-popup-${options.number}`
+
+	a.timeline__pin(
+		class=`timeline__pin--${options.class}`
+		href="javascript:void(0)"
+		title!=options.title
+		data-popup-id=id
+	)
+		!= options.title

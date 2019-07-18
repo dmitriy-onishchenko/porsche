@@ -1,0 +1,142 @@
+.loader {
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 1000;
+	width: 100%;
+	height: 100%;
+
+	canvas {
+		position: absolute;
+		left: 0;
+		top: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__progress {
+		position: absolute;
+		left: percentage(1254 / 1700);
+		top: percentage(227 / 800);
+		border-radius: 50%;
+		width: 293px;
+		height: 293px;
+		stroke-dashoffset: 1011;
+		background-color: $color-white;
+		opacity: 0;
+		transform: translate(-50%, -50%);
+
+		> svg {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: calc(100% + 41px);
+			height: calc(100% + 41px);
+			stroke: $color-white;
+			stroke-width: 1px;
+			transform: translate(-50%, -50%);
+		}
+
+		&__text {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 100%;
+			font-family: $font-pf-regal-display-pro;
+			font-weight: 500;
+			font-size: 66px;
+			line-height: 60px;
+			letter-spacing: -0.03em;
+			color: $color-black;
+
+			span {
+				position: relative;
+
+				&:first-child {
+					left: 32px;
+				}
+
+				&:last-child {
+					left: -32px;
+				}
+
+				// stylelint-disable-next-line
+				&:only-child {
+					left: 0;
+				}
+			}
+		}
+
+		&__start {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			z-index: 1;
+			overflow: hidden;
+			width: 218px;
+			height: 218px;
+			transform: translate(-50%, -50%);
+
+			svg {
+				position: absolute;
+
+				&:nth-child(1) {
+					left: 50%;
+					top: 50%;
+					width: 100%;
+					height: 100%;
+					transform: translate(-50%, -50%);
+					animation: rotation-cc 15s infinite linear;
+				}
+
+				&:nth-child(2) {
+					left: 50%;
+					top: 50%;
+					margin-top: 2px;
+					margin-left: 5px;
+					width: 52px;
+					height: 65px;
+					fill: $color-thunderbird;
+					transform: translate(-50%, -50%);
+					transition: fill 0.3s;
+
+					@include desktop {
+						@media (max-height: 700px) {
+							width: 38px;
+							height: 48px;
+						}
+					}
+				}
+			}
+
+			@include desktop {
+				@media (max-height: 700px) {
+					width: 160px;
+					height: 160px;
+				}
+			}
+		}
+
+		&.is-animated {
+			> svg {
+				animation: loading 4s linear infinite;
+
+				.is-browser-ie & {
+					stroke-dashoffset: (1011 * 2 / 3);
+					animation: rotation-c 6s linear infinite;
+				}
+			}
+		}
+	}
+
+	&.is-loading {
+		background-color: $color-black;
+
+		canvas {
+			display: none;
+		}
+	}
+}

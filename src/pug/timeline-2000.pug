@@ -1,0 +1,189 @@
++timeline({
+	id: '2000',
+	theme: 'dark'
+})
+	.transparent-player.transparent-player--main(
+		data-src="/video/2000/main.mp4"
+	)
+
+	.transparent-player.transparent-player--loop(
+		data-src="/video/2000/loop.mp4"
+		data-attrs={
+			autoplay: true,
+			muted: true,
+			loop: true,
+			playsinline: true
+		}
+	)
+
+	button.timeline__start.is-light(type="button" title="Начать")
+		+svg("start-circle")
+		+svg("play")
+
+	+timeline-animation({
+		src: '/animations/2000_disk/index.html',
+		class: 'timeline__animation--disk'
+	})
+
+	+timeline-animation({
+		src: '/animations/2000_shirt/index.html',
+		class: 'timeline__animation--shirt'
+	})
+
+	+timeline-decoration({
+		number: 1,
+		image: [
+			'/images/timeline/2000/1.png'
+		]
+	})
+
+	+timeline-decoration({
+		number: 2,
+		image: [
+			'/images/timeline/2000/2.png'
+		]
+	})
+
+	+timeline-decoration({
+		number: 3,
+		image: [
+			'/images/timeline/2000/3.png'
+		]
+	})
+
+	+timeline-decoration({
+		number: 4,
+		image: [
+			'/images/timeline/2000/4.png'
+		]
+	})
+
+	+timeline-decoration({
+		number: 6,
+		image: [
+			'/images/timeline/2000/6.png'
+		]
+	})
+
+	+timeline-decoration({
+		number: 7,
+		image: [
+			'/images/timeline/2000/7.png'
+		]
+	})
+
+	+timeline-decoration({
+		number: 9,
+		image: [
+			'/images/timeline/2000/9.png'
+		]
+	})
+
+	+timeline-decoration({
+		number: 10,
+		image: [
+			'/images/timeline/2000/10.png?v=2'
+		]
+	})
+
+	+timeline-decoration({
+		number: 12,
+		image: [
+			'/images/timeline/2000/12.png'
+		]
+	})
+
+	+timeline-decoration({
+		number: 13,
+		image: [
+			'/images/timeline/2000/13.png'
+		]
+	})
+
+	+timeline-decoration({
+		number: 14,
+		image: [
+			'/images/timeline/2000/2.png'
+		]
+	})
+
+	+timeline-popup({
+		pageId: '2000',
+		number: 1,
+		date: '2000-е',
+		title: 'Жизнь как шоу',
+		image: [
+			'/images/timeline/2000/4.png'
+		]
+	})
+		p В&nbsp;крупных городах всё больше камер видеонаблюдения, в&nbsp;общественных местах за&nbsp;нами теперь можно следить в&nbsp;режиме 24/7. Видеонаблюдение становится сетевым: изображение передается как через локальную сеть, так и&nbsp;через интернет. Появляются системы, умеющие распознавать людей и&nbsp;происходящее в&nbsp;кадре.
+		p На&nbsp;этом фоне становятся популярными телевизионные реалити-шоу, где зрители могут неделями следить за&nbsp;чужой жизнью. Жить под круглосуточным наблюдением видеокамер соглашаются даже некоторые знаменитости&nbsp;&mdash; меняется само понятие приватности и&nbsp;частной жизни. И&nbsp;это только начало: через какие-то десять лет никого уже не&nbsp;смущает, что весь интернет знает, где они сегодня завтракают, и&nbsp;каждый рад делиться самыми личными моментами не&nbsp;только с&nbsp;друзьями, но&nbsp;и&nbsp;с&nbsp;незнакомцами.
+
+	+timeline-pin({
+		pageId: '2000',
+		number: 1,
+		class: 2,
+		date: '2000-е',
+		title: 'Жизнь как шоу',
+	})
+
+	+timeline-popup({
+		pageId: '2000',
+		number: 3,
+		date: '2000-е',
+		title: 'Время славы для каждого',
+		image: [
+			'/images/timeline/2000/6.png'
+		]
+	})
+		p Скоростной интернет и&nbsp;смартфоны навсегда меняют мир. Общение в&nbsp;нулевые окончательно уходит в&nbsp;онлайн. Новое место силы&nbsp;&mdash; социальные сети. Они становятся мощнейшей площадкой влияния со&nbsp;своими правилами игры, героями и&nbsp;языком. В&nbsp;этой новой техноэпохе каждый получает возможность прославиться, высказать свое мнение или раскритиковать чужое.
+		p С&nbsp;этим теперь обязаны считаться даже самые люксовые бренды. Активность в&nbsp;соцсетях, специальный контент именно для подписчиков, отслеживание настроений в&nbsp;отзывах&nbsp;&mdash; это новая демократия, где правила игры задает покупатель.
+
+	+timeline-pin({
+		pageId: '2000',
+		number: 3,
+		class: 3,
+		date: '2000-е',
+		title: 'Время славы для каждого',
+	})
+
+	+timeline-popup({
+		pageId: '2000',
+		number: 5,
+		date: '2000-е',
+		title: 'Дресс-код нулевых',
+		image: [
+			'/images/timeline/2000/12.png'
+		]
+	})
+		p Двухтысячные&nbsp;&mdash; эпоха гламура и&nbsp;вычурности. В&nbsp;почете блеск, стразы, логотипы, it-сумки и&nbsp;it-туфли, броские принты и&nbsp;цвета. Скромничать не&nbsp;принято, люди охотно демонстрируют свой достаток через модный гардероб.
+		p Наступает эра онлайн-магазинов. Особую нишу занимает продажа модной одежды. Чтобы собрать гардероб, теперь не&nbsp;обязательно жить в&nbsp;больших городах или ездить в&nbsp;шопинг-туры за&nbsp;границу, в&nbsp;интернете можно купить всё, от&nbsp;туфель до&nbsp;костюма.
+		p Приходит время модных блогеров: мальчики и&nbsp;девочки из&nbsp;интернета занимают места в&nbsp;первых рядах на&nbsp;показах крупнейших брендов. В&nbsp;поисках вдохновения дизайнеры выходят на&nbsp;улицы: street style блоги предвосхищают закат бескомпромиссного гламура. Еще немного, и&nbsp;после мирового финансового кризиса главным дресс-кодом станет кэжуал.
+
+	+timeline-pin({
+		pageId: '2000',
+		number: 5,
+		class: 5,
+		title: 'Дресс-код нулевых',
+	})
+
+	+timeline-popup({
+		pageId: '2000',
+		number: 4,
+		date: '2000-е',
+		title: 'Porsche<br> Cayenne',
+		image: [
+			'/images/timeline/2000/14.png?v=2'
+		],
+		showButton: true
+	})
+		p Очередной поворотный момент в&nbsp;истории марки произошел в&nbsp;2002&nbsp;году, когда на&nbsp;свет появился Porsche Cayenne, модель, изменившая устоявшееся представление о&nbsp;марке Porsche и&nbsp;привлекшая массу новых клиентов. Тогда большие кроссоверы и&nbsp;внедорожники только начали набирать популярность, а&nbsp;спортивных внедорожников мир еще не&nbsp;видел. Так что Cayenne встретили с&nbsp;восторгом, и&nbsp;в&nbsp;салонах автодилеров марки за&nbsp;ним начали выстраиваться в&nbsp;очереди.
+		p Секрет грандиозного успеха Cayenne одновременно прост и&nbsp;гениален, как всегда получалось у&nbsp;Porsche. Сегодня Cayenne может выкатиться на&nbsp;гоночный трек и&nbsp;обойти спортивное купе, а&nbsp;завтра&nbsp;&mdash; без проблем преодолеть размытую подмосковную грунтовку и&nbsp;съехать на&nbsp;обледеневшую скоростную магистраль.
+		p За&nbsp;эти годы модель стремительно эволюционировала, и&nbsp;сейчас выпускается уже третье поколение кроссовера. Кстати, заказать роскошный стремительный внедорожник можно и&nbsp;в&nbsp;гибридном исполнении. Это версия Cayenne E-Hybrid с&nbsp;высокоэффективной силовой установкой, которая выдает 462&nbsp;л.&nbsp;с. С&nbsp;места до&nbsp;100&nbsp;км/ч такой автомобиль разгоняется всего за&nbsp;5&nbsp;секунд, а&nbsp;максимальная скорость&nbsp;&mdash; 253&nbsp;км/ч. И&nbsp;при этом в&nbsp;смешанном цикле средний расход бензина Cayenne E-Hybrid опускается до&nbsp;невероятных 3,2&ndash;3,4&nbsp;л бензина на&nbsp;100&nbsp;км пути... То&nbsp;есть большой и&nbsp;мощный внедорожник с&nbsp;потрясающей динамикой спорткара сжигает топлива меньше обычной малолитражки.
+
+	+timeline-pin({
+		pageId: '2000',
+		number: 4,
+		class: 4,
+		title: 'Porsche Cayenne',
+	})

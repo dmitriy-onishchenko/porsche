@@ -1,0 +1,35 @@
+mixin timeline-popup(options)
+	- var id = `timeline-${options.pageId}-popup-${options.number}`
+
+	section.timeline__popup(
+		class=[
+			`timeline__popup--${options.number}`,
+			{
+				'with-button': options.showButton
+			}
+		]
+		id=id
+	)
+		button.timeline__popup__close(type="button" title="Закрыть")
+			+svg("close")
+
+		.timeline__popup__container
+			.timeline__popup__header
+				if options.date
+					.timeline__popup__date!= options.date
+
+				h1.timeline__popup__title!= options.title
+
+			.timeline__popup__wrapper
+				.timeline__popup__content(data-simplebar data-simplebar-auto-hide="false")
+					block
+
+		picture.timeline__popup__image
+			if options.image[1]
+				source(srcset=options.image[1] type="image/webp")
+
+			img(src=options.image[0] alt="")
+
+			if options.showButton
+				a.timeline__popup__button(href="https://www.porsche.com/russia/" target="_blank" rel="noopener nofollow")
+					| Подробнее о Porsche

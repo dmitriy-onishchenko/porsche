@@ -1,0 +1,55 @@
+mixin timeline(options)
+	section.page.timeline.is-not-started(
+		id=`timeline-${options.id}`
+		class=[
+			`timeline--${options.id}`,
+			{
+				'is-last': options.last
+			}
+		]
+		hidden
+		data-page-theme=options.theme
+	)
+		block
+
+		footer.timeline__footer
+			.timeline__footer__container
+				.timeline__play
+					.timeline__play__label
+						+svg("label-start")
+						+svg("label-restart")
+						+svg("label-next")
+					button.timeline__play__button(type="button")
+						+svg("play-stroke")
+						+svg("pause")
+
+				nav.timeline__navigation
+					a.timeline__navigation__link(href="/timeline/1898-1939" data-router-link)
+						| 1898 &mdash; 1939
+					a.timeline__navigation__link(href="/timeline/1950-1970" data-router-link)
+						| 1950 &mdash; 1970
+					a.timeline__navigation__link(href="/timeline/1980-1990" data-router-link)
+						| 1980 &mdash; 1990
+					a.timeline__navigation__link(href="/timeline/2000" data-router-link)
+						| 2000-е
+					a.timeline__navigation__link(href="/timeline/2010-2018" data-router-link)
+						| 2010 &mdash; 2018
+					a.timeline__navigation__link(href="/timeline/2020-2035" data-router-link)
+						| 2020 &mdash; 2035
+
+				.timeline__sound
+					button.timeline__sound__toggle(type="button")
+						+svg("sound-on")
+						+svg("sound-off")
+
+				.timeline__share
+					button.timeline__share__toggle(type="button" title="Поделиться")
+						+svg("heart")
+
+					.timeline__share__popup
+						button.timeline__share__button.js-share-button(type="button" data-social="vk" title="Поделиться в VK")
+							+svg("vk")
+						button.timeline__share__button.js-share-button(type="button" data-social="facebook" title="Поделиться в Facebook")
+							+svg("facebook")
+						button.timeline__share__button.js-share-button(type="button" data-social="twitter" title="Поделиться в Twitter")
+							+svg("twitter")

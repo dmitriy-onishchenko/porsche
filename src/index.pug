@@ -1,0 +1,38 @@
+extends pug/base
+
+prepend vars
+	- title = 'Вместе с Porsche путешествуем по эпохам'
+	- description = 'Следуйте за Амбарцумом Кабаняном'
+	- image = 'http://porsche.style.rbc.ru/images/share/main.jpg'
+
+append vars
+	- link.appleTouchIcon180x180 = '/apple-touch-icon.png'
+	- link.icon32x32 = '/favicon-32x32.png'
+	- link.icon16x16 = '/favicon-16x16.png'
+	- link.manifest = '/site.webmanifest'
+	- link.maskIcon.href = '/safari-pinned-tab.svg'
+	- link.maskIcon.color = '#5bbad5'
+	- meta.msapplicationTileColor = '#2b5797'
+	- meta.themeColor = '#ffffff'
+
+block content
+	.site-container.for-desktop
+		include pug/header
+		include pug/home
+		include pug/timeline-1898-1939
+		include pug/timeline-1950-1970
+		include pug/timeline-1980-1990
+		include pug/timeline-2000
+		include pug/timeline-2010-2018
+		include pug/timeline-2020-2035
+		include pug/loader
+
+	include pug/stub
+	include pug/old-browser-stub
+
+prepend scripts
+	include pug/google-analytics
+	include pug/yandex-metrika
+
+append body-end
+	include pug/tns-counter

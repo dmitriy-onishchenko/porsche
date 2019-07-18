@@ -1,0 +1,12 @@
+@mixin font-face($name, $font-family, $font-weight, $font-style) {
+	$fullname: "#{$name}-#{$font-weight}#{if($font-style == italic, "-italic", "")}";
+
+	@font-face {
+		src:
+			url("../fonts/#{$name}/#{$fullname}.woff2") format("woff2"),
+			url("../fonts/#{$name}/#{$fullname}.woff") format("woff");
+		font-family: $font-family;
+		font-weight: $font-weight;
+		font-style: $font-style;
+	}
+}

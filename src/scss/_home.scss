@@ -1,0 +1,486 @@
+.home {
+	position: fixed;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	background-color: $color-white;
+
+	&::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		z-index: 1;
+		background: url("../images/home/background.png") 50% -100px no-repeat;
+
+		@include desktop {
+			@media (max-width: 1540px) {
+				@media (min-height: 701px) and (max-height: 961px) {
+					background-position-x: -530px;
+				}
+			}
+
+			@media (max-width: 1280px) {
+				background-position-x: calc(50% + 130px);
+
+				@media (min-height: 701px) and (max-height: 961px) {
+					background-position-x: -530px;
+				}
+			}
+
+			@media (max-height: 700px) {
+				background-position-y: -25px;
+				background-size: auto 800px;
+			}
+
+			@media (min-height: 962px) {
+				background-position-y: 100%;
+			}
+		}
+	}
+
+	.timeline__animation--moon {
+		top: 362px;
+		z-index: 0;
+		margin-left: 570px;
+		width: 370px;
+		height: 370px;
+
+		@include desktop {
+			@media (max-width: 1280px) {
+				margin-left: 570px + 130px;
+			}
+
+			@media (max-height: 700px) {
+				margin-top: -25px;
+			}
+
+			@media (min-height: 962px) {
+				top: auto;
+				bottom: 230px;
+				margin-top: 0;
+			}
+		}
+	}
+
+	.transparent-player {
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		z-index: 5;
+		transform: translateX(-50%);
+		transition: opacity 0.6s, visibility 0.6s;
+		pointer-events: none;
+		touch-action: none;
+
+		&--main {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		&--loop {
+			opacity: 0;
+			visibility: hidden;
+			transition-delay: 0.3s;
+		}
+
+		@include desktop {
+			@media (max-width: 1280px) {
+				margin-left: 130px;
+			}
+
+			@media (max-aspect-ratio: 1920 / 1080) {
+				width: 100vw;
+				height: 100vw * 1080 / 1920;
+			}
+
+			@media (min-aspect-ratio: 1920 / 1080) {
+				width: 100vh * 1920 / 1080;
+				height: 100vh;
+			}
+		}
+	}
+
+	&__title {
+		position: absolute;
+		left: 50%;
+		top: 72px;
+		z-index: 3;
+		margin-left: -618px;
+		text-transform: uppercase;
+		color: $color-black;
+
+		span {
+			display: block;
+
+			&:nth-child(1) {
+				margin-left: 107px;
+				font-family: $font-playfair-display;
+				font-weight: 700;
+				font-size: 87px;
+				line-height: 1;
+				letter-spacing: 0.025em;
+			}
+
+			&:nth-child(2) {
+				margin-top: 2px;
+				font-family: $font-graphik-rbc-lc;
+				font-weight: 300;
+				font-size: 67px;
+				line-height: 1;
+				letter-spacing: 0.195em;
+			}
+		}
+
+		@include desktop {
+			@media (max-width: 1280px) {
+				margin-left: -618px + 130px;
+			}
+
+			@media (max-height: 700px) {
+				top: 36px;
+			}
+
+			@media (min-height: 940px) {
+				top: 50%;
+				margin-top: -377px;
+
+				@media (min-width: 1360px) {
+					margin-left: -618px - 30px;
+				}
+			}
+		}
+	}
+
+	&__description {
+		position: absolute;
+		left: 50%;
+		top: 291px;
+		z-index: 3;
+		margin: 0 0 0 -508px;
+		width: 355px;
+		font-family: $font-graphik-rbc-lc;
+		font-weight: 300;
+		font-size: 17px;
+		line-height: 27px;
+		letter-spacing: -0.01em;
+
+		span {
+			font-family: $font-playfair-display;
+			font-weight: 400;
+			font-size: 19px;
+			letter-spacing: 0.025em;
+			text-transform: uppercase;
+			color: $color-monza;
+		}
+
+		@include desktop {
+			@media (max-width: 1280px) {
+				margin-left: -508px + 130px;
+			}
+
+			@media (max-height: 700px) {
+				top: 235px;
+			}
+
+			@media (min-height: 940px) {
+				top: 50%;
+				margin-top: -178px;
+
+				@media (min-width: 1360px) {
+					margin-left: -508px - 30px;
+				}
+			}
+		}
+	}
+
+	&__more {
+		position: absolute;
+		left: 50%;
+		top: 524px;
+		z-index: 3;
+		margin-left: -515px;
+		padding: 15px 30px 15px 47px;
+		height: 48px;
+		font-family: $font-playfair-display;
+		font-weight: 700;
+		font-size: 13px;
+		line-height: 18px;
+		letter-spacing: 0.03em;
+		text-decoration: none;
+		text-transform: uppercase;
+		color: $color-black;
+
+		svg {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 48px;
+			height: 48px;
+			stroke: $color-thunderbird;
+		}
+
+		@include desktop {
+			&:hover {
+				text-decoration: underline;
+			}
+
+			@media (max-width: 1280px) {
+				margin-left: -515px + 130px;
+			}
+
+			@media (max-height: 700px) {
+				top: 452px;
+				margin-left: -358px;
+
+				@media (max-width: 1280px) {
+					margin-left: -358px + 130px;
+				}
+			}
+
+			@media (min-height: 940px) {
+				@media (min-width: 1360px) {
+					margin-left: -515px - 30px;
+				}
+			}
+
+			@media (min-height: 962px) {
+				top: auto;
+				bottom: 390px;
+			}
+		}
+	}
+
+	&__start {
+		position: absolute;
+		left: 50%;
+		top: 247px;
+		z-index: 1;
+		overflow: hidden;
+		margin-left: 133px;
+		width: 218px;
+		height: 218px;
+		visibility: hidden;
+
+		svg {
+			position: absolute;
+
+			&:nth-child(1) {
+				left: 50%;
+				top: 50%;
+				width: 100%;
+				height: 100%;
+				transform: translate(-50%, -50%);
+				animation: rotation-cc 15s infinite linear;
+			}
+
+			&:nth-child(2) {
+				left: 50%;
+				top: 50%;
+				margin-top: 2px;
+				margin-left: 5px;
+				width: 52px;
+				height: 65px;
+				fill: $color-thunderbird;
+				transform: translate(-50%, -50%);
+				transition: fill 0.3s;
+
+				@include desktop {
+					@media (max-height: 700px) {
+						width: 38px;
+						height: 48px;
+					}
+				}
+			}
+		}
+
+		.is-not-started & {
+			visibility: visible;
+		}
+
+		@include desktop {
+			&:hover {
+				svg {
+					&:nth-child(2) {
+						fill: $color-black;
+					}
+				}
+			}
+
+			@media (max-width: 1280px) {
+				margin-left: 133px + 130px;
+			}
+
+			@media (max-height: 700px) {
+				top: 187px;
+				margin-left: 125px;
+				width: 160px;
+				height: 160px;
+
+				@media (max-width: 1280px) {
+					margin-left: 125px + 130px;
+				}
+			}
+
+			@media (min-height: 940px) {
+				top: auto;
+				bottom: 475px;
+			}
+		}
+	}
+
+	&__footer {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		z-index: 4;
+		width: 100%;
+		height: 0;
+	}
+
+	&__share {
+		position: absolute;
+		left: 13px;
+		bottom: 17px;
+		display: flex;
+
+		&__button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: none;
+			padding: 0;
+			width: 40px;
+			height: 40px;
+			background: none;
+
+			svg {
+				position: relative;
+				display: block;
+				margin: 0 auto;
+				fill: transparent;
+				stroke: $color-black;
+				stroke-width: 1px;
+				transition: fill 0.3s;
+			}
+
+			&[data-social="vk"] {
+				svg {
+					width: 32px * 1.2;
+					height: 23px * 1.2;
+				}
+			}
+
+			&[data-social="facebook"] {
+				svg {
+					width: 21px * 1.2;
+					height: 29px * 1.2;
+				}
+			}
+
+			&[data-social="twitter"] {
+				svg {
+					width: 32px * 1.2;
+					height: 27px * 1.2;
+				}
+			}
+
+			@include desktop {
+				&:hover {
+					svg {
+						fill: $color-black;
+					}
+				}
+			}
+		}
+	}
+
+	&__info {
+		position: absolute;
+		right: 17px;
+		bottom: 15px;
+
+		&__toggle {
+			display: block;
+			border: none;
+			padding: 0;
+			width: 47px;
+			height: 47px;
+			background: none;
+			transition: opacity 0.3s, visibility 0.3s;
+
+			svg {
+				position: relative;
+				display: block;
+				width: 100%;
+				height: 100%;
+				stroke: $color-black;
+			}
+		}
+
+		&__popup {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			border: solid 1px $color-black;
+			padding: 20px;
+			font-family: $font-graphik-rbc-lc;
+			font-size: 12px;
+			line-height: 18px;
+			white-space: nowrap;
+			color: $color-black;
+			background-color: $color-white;
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity 0.3s, visibility 0.3s;
+		}
+
+		&.is-open {
+			.home__info__toggle {
+				opacity: 0;
+				visibility: hidden;
+			}
+
+			.home__info__popup {
+				opacity: 1;
+				visibility: visible;
+			}
+
+			@include mobile {
+				-webkit-tap-highlight-color: transparent;
+			}
+		}
+
+		@include desktop {
+			&:hover {
+				.home__info__toggle {
+					opacity: 0;
+					visibility: hidden;
+				}
+
+				.home__info__popup {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+	}
+
+	&.is-not-started {
+		.transparent-player {
+			&--main {
+				opacity: 0;
+				visibility: hidden;
+			}
+
+			&--loop {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+}

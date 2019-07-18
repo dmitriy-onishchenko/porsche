@@ -1,0 +1,12 @@
+mixin timeline-decoration(options)
+	picture.timeline__decoration(
+		class=`timeline__decoration--${options.number}`
+	)
+		if options.image[1]
+			source(srcset=options.image[1] type="image/webp")
+		if options.copy
+			- for (var i = 0; i < options.copy; i++) {
+			img(src=options.image[0] alt="")
+			- }
+		else
+			img(src=options.image[0] alt="")

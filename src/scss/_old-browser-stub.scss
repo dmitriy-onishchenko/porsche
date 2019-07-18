@@ -1,0 +1,101 @@
+.old-browser-stub {
+	display: none;
+	padding: 100px 180px;
+
+	&__title {
+		margin-bottom: 35px;
+		max-width: 560px;
+		font-family: $font-graphik-rbc-lc;
+		font-weight: 700;
+		font-size: 35px;
+		line-height: 1;
+		text-transform: uppercase;
+		color: $color-white;
+	}
+
+	&__subtitle {
+		margin-bottom: 15px;
+		max-width: 535px;
+		font-family: $font-graphik-rbc-lc;
+		font-weight: 700;
+		font-size: 30px;
+		line-height: 1;
+		color: $color-white;
+	}
+
+	&__text {
+		margin-bottom: 35px;
+		max-width: 535px;
+		font-family: $font-graphik-rbc-lc;
+		font-weight: 300;
+		font-size: 19px;
+		line-height: 28px;
+		color: $color-white;
+	}
+
+	&__links {
+		display: flex;
+		margin-bottom: 90px;
+		padding-left: 4px;
+	}
+
+	&__link {
+		margin-right: 38px;
+		width: 60px;
+		height: 60px;
+		background: 50% 50% no-repeat;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&--chrome {
+			background-image: url("../images/chrome.png");
+		}
+
+		&--safari {
+			background-image: url("../images/safari.png");
+		}
+
+		&--opera {
+			background-image: url("../images/opera.png");
+		}
+
+		&--firefox {
+			background-image: url("../images/firefox.png");
+		}
+	}
+}
+
+.is-browser-ie {
+	body {
+		width: auto;
+		height: auto;
+		min-height: 100vh;
+		background: url("../images/old-browser-stub.jpg") 50% 50% no-repeat;
+		background-size: cover;
+	}
+
+	.page {
+		display: none;
+	}
+
+	.header {
+		display: block !important;
+
+		&__logo-rbc-style,
+		&__logo-porsche {
+			svg {
+				fill: $color-white !important;
+			}
+		}
+
+		&__project-label {
+			color: $color-white !important;
+		}
+	}
+
+	.old-browser-stub {
+		display: block;
+	}
+}

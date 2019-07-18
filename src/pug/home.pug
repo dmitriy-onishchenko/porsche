@@ -1,0 +1,46 @@
+section.page.home.is-not-started(hidden data-page-theme="light")
+	+timeline-animation({
+		src: '/animations/intro_moon/index.html',
+		class: 'timeline__animation--moon'
+	})
+
+	h1.home__title
+		| #[span Машина]
+		| #[span времени]
+
+	p.home__description
+		| #[span Хотите отправиться] в&nbsp;виртуальный тур по&nbsp;технологиям XX&nbsp;века, современности и&nbsp;ближайшего будущего? Тогда следуйте за&nbsp;гидом&nbsp;&mdash; актером Амбарцумом Кабаняном. Нажимайте точки на&nbsp;карте предметов, чтобы ближе познакомиться с&nbsp;технологиями разных эпох и&nbsp;их&nbsp;основными приметами.
+
+	a.home__start(href="/timeline/1898-1939" title="Начать")
+		+svg("start-circle")
+		+svg("play")
+
+	.transparent-player.transparent-player--main(
+		data-src="/video/home/main.mp4"
+	)
+
+	.transparent-player.transparent-player--loop(
+		data-src="/video/home/loop.mp4"
+		data-attrs={
+			autoplay: true,
+			muted: true,
+			loop: true,
+			playsinline: true
+		}
+	)
+
+	footer.home__footer
+		.home__share
+			button.home__share__button.js-share-button(type="button" data-social="vk" title="Поделиться в VK")
+				+svg("vk")
+			button.home__share__button.js-share-button(type="button" data-social="facebook" title="Поделиться в Facebook")
+				+svg("facebook")
+			button.home__share__button.js-share-button(type="button" data-social="twitter" title="Поделиться в Twitter")
+				+svg("twitter")
+
+		//-.home__info
+			button.home__info__toggle(type="button" title="Информация о проекте")
+				+svg("info")
+
+			.home__info__popup
+				| Информация о команде

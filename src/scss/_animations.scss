@@ -1,0 +1,53 @@
+@keyframes rotation-c {
+	from {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+
+	to {
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+}
+
+@keyframes rotation-cc {
+	from {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+
+	to {
+		transform: translate(-50%, -50%) rotate(-360deg);
+	}
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+	}
+
+	70% {
+		transform: scale(1.2);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes radial-pulse {
+	0% {
+		box-shadow: 0 0 0 0 rgba($color-white, 0.5);
+	}
+
+	100% {
+		box-shadow: 0 0 0 20px rgba($color-white, 0);
+	}
+}
+
+@keyframes loading {
+	from {
+		stroke-dashoffset: 1011;
+	}
+
+	to {
+		stroke-dashoffset: 0;
+	}
+}

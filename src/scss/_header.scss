@@ -1,0 +1,111 @@
+.header {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 10;
+	width: 100%;
+	height: 0;
+
+	&__logo-rbc-style {
+		position: absolute;
+		left: 13px;
+		top: 15px;
+		opacity: 1;
+		visibility: visible;
+		transition: opacity 0.5s, visibility 0.5s;
+
+		svg {
+			display: block;
+			width: 139px;
+			height: 27px;
+			transition: fill 0.5s;
+
+			[data-theme="light"] & {
+				fill: $color-black;
+			}
+
+			[data-theme="dark"] & {
+				fill: $color-white;
+			}
+
+			.is-popup-open & {
+				fill: $color-black;
+			}
+		}
+
+		[data-theme="light"] & {
+			color: $color-black;
+		}
+
+		[data-theme="dark"] & {
+			color: $color-white;
+		}
+
+		.is-popup-open & {
+			color: $color-black;
+			opacity: 0;
+			visibility: hidden;
+			pointer-events: none;
+		}
+	}
+
+	&__logo-porsche {
+		position: absolute;
+		right: 18px;
+		top: 16px;
+		opacity: 1;
+		visibility: visible;
+		transition: opacity 0.5s, visibility 0.5s;
+
+		svg {
+			display: block;
+			width: 170px;
+			height: 21px;
+
+			[data-theme="light"] & {
+				fill: $color-black;
+			}
+
+			[data-theme="dark"] & {
+				fill: $color-white;
+			}
+		}
+
+		[data-theme="light"] & {
+			color: $color-black;
+		}
+
+		[data-theme="dark"] & {
+			color: $color-white;
+		}
+
+		.is-popup-open & {
+			color: $color-black;
+			opacity: 0;
+			visibility: hidden;
+			pointer-events: none;
+		}
+	}
+
+	&__project-label {
+		position: absolute;
+		right: 195px;
+		top: 20px;
+		font-family: $font-graphik-rbc-lc;
+		font-size: 11px;
+		line-height: 1;
+		letter-spacing: -0.01em;
+
+		.is-popup-open & {
+			visibility: hidden;
+		}
+
+		[data-theme="light"] & {
+			color: $color-black;
+		}
+
+		[data-theme="dark"] & {
+			color: $color-white;
+		}
+	}
+}
